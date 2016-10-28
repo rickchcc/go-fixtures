@@ -1,3 +1,4 @@
+[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](http://godoc.org/github.com/RichardKnop/go-fixtures)
 [![Codeship Status for RichardKnop/go-fixtures](https://codeship.com/projects/2972d6c0-37b3-0134-ffd1-02b643534a44/status?branch=master)](https://codeship.com/projects/165845)
 
 # go-fixtures
