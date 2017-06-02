@@ -3,13 +3,13 @@ package fixtures_test
 import (
 	"testing"
 
-	gofixtures "github.com/RichardKnop/go-fixtures"
+	"github.com/RichardKnop/go-fixtures"
 	"github.com/stretchr/testify/assert"
 )
 
 func TestRow(t *testing.T) {
 	// Create a test Row instance
-	row := &gofixtures.Row{
+	row := &fixtures.Row{
 		Table: "some_table",
 		PK: map[string]interface{}{
 			"some_id":  interface{}(1),

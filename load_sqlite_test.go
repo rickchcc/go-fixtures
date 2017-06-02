@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	gofixtures "github.com/RichardKnop/go-fixtures"
+	"github.com/RichardKnop/go-fixtures"
 	"github.com/stretchr/testify/assert"
 	// Driver
 	_ "github.com/mattn/go-sqlite3"
@@ -38,7 +38,7 @@ func TestLoadWorksWithValidDataSQLite(t *testing.T) {
 	}
 
 	// Let's load the fixture, since the database is empty, this should run inserts
-	err = gofixtures.Load([]byte(testData), db, "sqlite")
+	err = fixtures.Load([]byte(testData), db, "sqlite")
 
 	// Error should be nil
 	assert.Nil(t, err)
@@ -151,7 +151,7 @@ func TestLoadWorksWithValidDataSQLite(t *testing.T) {
 	}
 
 	// Let's reload the fixture, this should run updates
-	err = gofixtures.Load([]byte(testData), db, "sqlite")
+	err = fixtures.Load([]byte(testData), db, "sqlite")
 
 	// Error should be nil
 	assert.Nil(t, err)
@@ -282,7 +282,7 @@ func TestLoadFileWorksWithValidFileSQLite(t *testing.T) {
 	assert.Equal(t, 0, count)
 
 	// Let's load the fixture, since the database is empty, this should run inserts
-	err = gofixtures.LoadFile(fixtureFile, db, "sqlite")
+	err = fixtures.LoadFile(fixtureFile, db, "sqlite")
 
 	// Error should be nil
 	assert.Nil(t, err)
@@ -337,7 +337,7 @@ func TestLoadFileWorksWithValidFileSQLite(t *testing.T) {
 	}
 
 	// Let's reload the fixture, this should run updates
-	err = gofixtures.LoadFile(fixtureFile, db, "sqlite")
+	err = fixtures.LoadFile(fixtureFile, db, "sqlite")
 
 	// Error should be nil
 	assert.Nil(t, err)
@@ -376,7 +376,7 @@ func TestLoadFileFailssWithMissingFileSQLite(t *testing.T) {
 	}
 
 	// Let's load the fixture, since the database is empty, this should run inserts
-	err = gofixtures.LoadFile("bad_filename.yml", db, "sqlite")
+	err = fixtures.LoadFile("bad_filename.yml", db, "sqlite")
 
 	// Error should be nil
 	assert.EqualError(t, err, "Error loading file bad_filename.yml: open bad_filename.yml: no such file or directory")
@@ -417,7 +417,7 @@ func TestLoadFilesWorksWithValidFilesSQLite(t *testing.T) {
 	assert.Equal(t, 0, count)
 
 	// Let's load the fixture, since the database is empty, this should run inserts
-	err = gofixtures.LoadFiles(fixtureFiles, db, "sqlite")
+	err = fixtures.LoadFiles(fixtureFiles, db, "sqlite")
 
 	// Error should be nil
 	assert.Nil(t, err)
@@ -433,7 +433,7 @@ func TestLoadFilesWorksWithValidFilesSQLite(t *testing.T) {
 	assert.Equal(t, 1, count)
 
 	// Let's reload the fixtures, this should run updates
-	err = gofixtures.LoadFiles(fixtureFiles, db, "sqlite")
+	err = fixtures.LoadFiles(fixtureFiles, db, "sqlite")
 
 	// Error should be nil
 	assert.Nil(t, err)
@@ -487,7 +487,7 @@ func TestLoadFilesFailsWithABadFileSQLite(t *testing.T) {
 	}
 
 	// Let's load the fixture, since the database is empty, this should run inserts
-	err = gofixtures.LoadFiles(badList, db, "sqlite")
+	err = fixtures.LoadFiles(badList, db, "sqlite")
 
 	// Error should be nil
 	assert.EqualError(t, err, "Error loading file bad_file: open bad_file: no such file or directory")
