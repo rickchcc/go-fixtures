@@ -1,4 +1,4 @@
-# go-fixtures
+## go-fixtures
 
 Django style fixtures for Golang's excellent built-in `database/sql` library. Currently only `YAML` fixtures are supported.
 
