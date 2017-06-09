@@ -103,7 +103,7 @@ func main() {
 			Usage: "run web server",
 			Action: func(c *cli.Context) error {
 				// Run your web server here
-        return nil
+				return nil
 			},
 		},
 	}
