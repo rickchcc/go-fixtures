@@ -8,6 +8,8 @@ import (
 )
 
 func TestRow(t *testing.T) {
+	t.Parallel()
+
 	// Create a test Row instance
 	row := &fixtures.Row{
 		Table: "some_table",

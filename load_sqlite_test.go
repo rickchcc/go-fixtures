@@ -13,9 +13,11 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 )
 
-var testSQLiteDb = "/tmp/fixtures_testdb.sqlite"
-
 func TestLoadWorksWithValidDataSQLite(t *testing.T) {
+	t.Parallel()
+
+	var testSQLiteDb = "/tmp/fixtures_testdb_load.sqlite"
+
 	// Delete the test database
 	os.Remove(testSQLiteDb)
 
@@ -249,6 +251,10 @@ func TestLoadWorksWithValidDataSQLite(t *testing.T) {
 }
 
 func TestLoadFileWorksWithValidFileSQLite(t *testing.T) {
+	t.Parallel()
+
+	var testSQLiteDb = "/tmp/fixtures_testdb_load_file.sqlite"
+
 	// Delete the test database
 	os.Remove(testSQLiteDb)
 
@@ -353,7 +359,11 @@ func TestLoadFileWorksWithValidFileSQLite(t *testing.T) {
 	assert.Equal(t, 0, count)
 }
 
-func TestLoadFileFailssWithMissingFileSQLite(t *testing.T) {
+func TestLoadFileFailsWithMissingFileSQLite(t *testing.T) {
+	t.Parallel()
+
+	var testSQLiteDb = "/tmp/fixtures_testdb_load_file_missing_file.sqlite"
+
 	// Delete the test database
 	os.Remove(testSQLiteDb)
 
@@ -383,6 +393,10 @@ func TestLoadFileFailssWithMissingFileSQLite(t *testing.T) {
 }
 
 func TestLoadFilesWorksWithValidFilesSQLite(t *testing.T) {
+	t.Parallel()
+
+	var testSQLiteDb = "/tmp/fixtures_testdb_load_files.sqlite"
+
 	// Delete the test database
 	os.Remove(testSQLiteDb)
 
@@ -448,6 +462,10 @@ func TestLoadFilesWorksWithValidFilesSQLite(t *testing.T) {
 }
 
 func TestLoadFilesFailsWithABadFileSQLite(t *testing.T) {
+	t.Parallel()
+
+	var testSQLiteDb = "/tmp/fixtures_testdb_load_files_bad_file.sqlite"
+
 	// Delete the test database
 	os.Remove(testSQLiteDb)
 

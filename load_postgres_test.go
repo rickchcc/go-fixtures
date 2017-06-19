@@ -14,19 +14,18 @@ import (
 	_ "github.com/lib/pq"
 )
 
-var (
-	testPostgresDbUser = "go_fixtures"
-	testPostgresDbName = "go_fixtures_test"
-)
+const testPostgresDbUser = "go_fixtures"
 
 func TestLoadWorksWithValidDataPostgres(t *testing.T) {
+	t.Parallel()
+
 	var (
 		db  *sql.DB
 		err error
 	)
 
 	// Connect to a test Postgres db
-	db, err = rebuildDatabasePostgres(testPostgresDbUser, testPostgresDbName)
+	db, err = rebuildDatabasePostgres(testPostgresDbUser, "go_fixtures_test_load")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -250,13 +249,15 @@ func TestLoadWorksWithValidDataPostgres(t *testing.T) {
 }
 
 func TestLoadFileWorksWithValidFilePostgres(t *testing.T) {
+	t.Parallel()
+
 	var (
 		db  *sql.DB
 		err error
 	)
 
 	// Connect to a test Postgres db
-	db, err = rebuildDatabasePostgres(testPostgresDbUser, testPostgresDbName)
+	db, err = rebuildDatabasePostgres(testPostgresDbUser, "go_fixtures_test_load_file")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -351,14 +352,16 @@ func TestLoadFileWorksWithValidFilePostgres(t *testing.T) {
 	assert.Equal(t, 0, count)
 }
 
-func TestLoadFileFailssWithMissingFilePostgres(t *testing.T) {
+func TestLoadFileFailsWithMissingFilePostgres(t *testing.T) {
+	t.Parallel()
+
 	var (
 		db  *sql.DB
 		err error
 	)
 
 	// Connect to a test Postgres db
-	db, err = rebuildDatabasePostgres(testPostgresDbUser, testPostgresDbName)
+	db, err = rebuildDatabasePostgres(testPostgresDbUser, "go_fixtures_test_load_file_missing_file")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -378,13 +381,15 @@ func TestLoadFileFailssWithMissingFilePostgres(t *testing.T) {
 }
 
 func TestLoadFilesWorksWithValidFilesPostgres(t *testing.T) {
+	t.Parallel()
+
 	var (
 		db  *sql.DB
 		err error
 	)
 
 	// Connect to a test Postgres db
-	db, err = rebuildDatabasePostgres(testPostgresDbUser, testPostgresDbName)
+	db, err = rebuildDatabasePostgres(testPostgresDbUser, "go_fixtures_test_load_files")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -440,13 +445,15 @@ func TestLoadFilesWorksWithValidFilesPostgres(t *testing.T) {
 }
 
 func TestLoadFilesFailsWithABadFilePostgres(t *testing.T) {
+	t.Parallel()
+
 	var (
 		db  *sql.DB
 		err error
 	)
 
 	// Connect to a test Postgres db
-	db, err = rebuildDatabasePostgres(testPostgresDbUser, testPostgresDbName)
+	db, err = rebuildDatabasePostgres(testPostgresDbUser, "go_fixtures_test_load_files_bad_file")
 	if err != nil {
 		log.Fatal(err)
 	}
