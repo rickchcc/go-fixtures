@@ -1,0 +1,42 @@
+memo = "e271332f21c67b9e39f001f9876057507fbe7fc12f0c3dfae03c9160be130b21"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/davecgh/go-spew"
+  packages = ["spew"]
+  revision = "346938d642f2ec3594ed81d874461961cd0faa76"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/lib/pq"
+  packages = [".","oid"]
+  revision = "2704adc878c21e1329f46f6e56a1c387d788ff94"
+
+[[projects]]
+  name = "github.com/mattn/go-sqlite3"
+  packages = ["."]
+  revision = "cf7286f069c3ef596efcc87781a4653a2e7607bd"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/pmezard/go-difflib"
+  packages = ["difflib"]
+  revision = "792786c7400a136282c1664665ae0a8db921c6c2"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/stretchr/testify"
+  packages = ["assert"]
+  revision = "05e8a0eda380579888eb53c394909df027f06991"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/net"
+  packages = ["context"]
+  revision = "513929065c19401a1c7b76ecd942f9f86a0c061b"
+
+[[projects]]
+  branch = "master"
+  name = "gopkg.in/yaml.v2"
+  packages = ["."]
+  revision = "cd8b52f8269e0feb286dfeef29f8fe4d5b397e0b"
