@@ -63,5 +63,5 @@
   name = "github.com/stretchr/testify"
 
 [[dependencies]]
-  branch = "master"
+  branch = "v2"
   name = "gopkg.in/yaml.v2"
